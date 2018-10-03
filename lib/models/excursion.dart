@@ -8,7 +8,7 @@ class Excursion {
   final String language;
   final String status;
   final String type;
-  final DatePickerMode date;
+  final DateTime date;
 
   Excursion({
     @required this.id,

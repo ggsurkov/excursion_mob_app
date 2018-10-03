@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 import 'package:excursions_app/pages/auth.dart';
+import 'package:excursions_app/pages/admin.dart';
 
 
 
@@ -31,9 +32,9 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.deepOrange,
           accentColor: Colors.deepPurple,
           buttonColor: Colors.deepPurple),
-      // home: AuthPage(),
       routes: {
         '/': (BuildContext context) => AuthPage(),
+        '/admin': (BuildContext context) => AdminPage(),
 //        '/products': (BuildContext context) => ProductsPage(_products),
 //        '/admin': (BuildContext context) =>
 //            ProductsAdminPage(_addProduct, _updateProduct, _deleteProduct, _products),

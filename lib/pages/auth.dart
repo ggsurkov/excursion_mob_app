@@ -23,7 +23,7 @@ class _AuthPageState extends State<AuthPage> {
         if (value.isEmpty ||
             !RegExp(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
                 .hasMatch(value)) {
-          return 'Please enter a valid email';
+          return 'Пожалуйста, введите корректный email адрес';
         }
       },
       onSaved: (String value) {
@@ -35,11 +35,11 @@ class _AuthPageState extends State<AuthPage> {
   Widget _buildPasswordTextField() {
     return TextFormField(
       decoration: InputDecoration(
-          labelText: 'Password', filled: true, fillColor: Colors.white),
+          labelText: 'Пароль', filled: true, fillColor: Colors.white),
       obscureText: true,
       validator: (String value) {
         if (value.isEmpty || value.length < 6) {
-          return 'Password invalid';
+          return 'Неверный пароль';
         }
       },
       onSaved: (String value) {
@@ -49,12 +49,12 @@ class _AuthPageState extends State<AuthPage> {
   }
 
   void _submitForm() {
-    if (!_formKey.currentState.validate() || !_formData['acceptTerms']) {
+    if (!_formKey.currentState.validate()) {
       return;
     }
     _formKey.currentState.save();
     print(_formData);
-    Navigator.pushReplacementNamed(context, '/products');
+    Navigator.pushReplacementNamed(context, '/admin');
   }
 
   @override
@@ -63,7 +63,7 @@ class _AuthPageState extends State<AuthPage> {
     final double targetWidth = deviceWidth > 550.0 ? 500.0 : deviceWidth * 0.95;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Вход в систему'),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -87,7 +87,7 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                     RaisedButton(
                       textColor: Colors.white,
-                      child: Text('LOGIN'),
+                      child: Text('ВОЙТИ'),
                       onPressed: _submitForm,
                     ),
                   ],
